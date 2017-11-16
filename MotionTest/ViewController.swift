@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import MotionKit
 
 class ViewController: UIViewController {
+    
+    let motionKit = MotionKit()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        motionKit.getAccelerationFromDeviceMotion(0.25) { (x, y, z) in
+            print(x, y, z)
+        }
     }
 
     override func didReceiveMemoryWarning() {
